@@ -14,7 +14,7 @@ headers = {
 opt = Options()
 opt.add_argument('__headless')
 opt.add_argument('__disable-gpu')
-drv = webdriver.Chrome(chrome_options=opt, executable_path='../settings/chromedriver')
+drv = webdriver.Chrome(chrome_options=opt, executable_path=DRVPATH)
 
 drv.get(cmn.URL)
 source = drv.page_source

@@ -2,7 +2,6 @@ from settings import cmn
 import requests
 from bs4 import BeautifulSoup
 
-
 # セッションを開始
 session = requests.session()
 

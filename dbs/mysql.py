@@ -1,6 +1,3 @@
-import sys
-sys.path.append("..")
-
 from settings import sql
 import MySQLdb
 

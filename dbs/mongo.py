@@ -21,6 +21,7 @@ for a in html.cssselect('a'):
     })
 
 for link in collection.find().sort('_id'):
-    print(link['_id'], link['url'], link['title'])
+    # print(link['_id'], link['url'], link['title'])
+    pass
 
-print(collection.count())
+print('ok')

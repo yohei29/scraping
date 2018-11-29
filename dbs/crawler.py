@@ -37,7 +37,6 @@ def sc_detali(res):
         'price' : root.cssselect('.buy')[0].text.strip(),
         'content' : [norm_spaces( h3.text_content() ) for h3 in root.cssselect('#content > h3')],
     }
-
     return ebook
 
 def norm_spaces(s):

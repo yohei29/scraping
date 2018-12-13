@@ -1,4 +1,5 @@
-from scraping.dbs.crawler import Crawler
+import random
 
-craw = Crawler.craw
+i = random.randrange(2)
 
+print(i)

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>日本の美術館</title>
+    <style>
+        html, body, #map {height, 100%, margin: 0; padding: 0;}
+    </style>
+    <script>
+        function initMap(){
+          var map = new google.maps.Map(document.getElementById('map'),{
+            center:{lat:35.7, lng: 137.7},
+            zoom: 7
+          })
+
+          var infowindow = new google.maps.InfoWindow();
+          var geojsonUrl = './museums.geojson';
+          map.data.loadGeoJson(geojsonUrl)
+
+          map.data.addListener('click', function(e){
+            var h2 = document.createElement('h2');
+            h2.textContent = e.feature.getProperty('label');
+
+            var div = document.createElement('div')
+            div.appendChild(h2);
+            div.appendChild(document.createTextNode(
+              '住所:' + e.feature.getProperty('address')))
+
+            infowindow.setContent(div);
+            infoWindow.setPosition(e.feature.getGeometry().get())
+            infowindow.setOptions({
+              pixelOffset: new google.maps.Size(0, -38)
+            })
+            infowindow.open(map);
+          })
+        }
+    </script>
+    <script async defer src ="https://maps.googleapis.com/maps/api/js?callback=initMap"></script >
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>

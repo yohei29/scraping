@@ -8,7 +8,6 @@ from selenium.webdriver.support.ui  import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import  Keys
 
-
 URL = 'https://note.mu/'
 
 def main():
